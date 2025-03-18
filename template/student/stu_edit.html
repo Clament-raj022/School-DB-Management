@@ -1,0 +1,63 @@
+{% extends  'home.html' %}
+{% block title %}customer edit{% endblock %}
+
+{% block content %}
+    <center>
+        <h1> Edit Student Details </h1>
+        <form action="edi_stu" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <table>
+                
+                {% for i in data %}
+                <tr>
+                    <th>ID</th>
+                    <td><input type="text" name="id" value="{{ i.id }}" readonly></td>
+                </tr>
+                <tr>
+                    <th>Name</th>
+                    <td><input type="text" name="name" value="{{ i.name }}"></td>
+                </tr>
+                <tr>
+                    <th>Class</th>
+                    <td><input type="text" name="class" value="{{ i.class}}"></td>
+                </tr>
+                <tr>
+                    <th>Date of Birth</th>
+                    <td><input type="text" name="date_of_birth" value="{{ i.date_of_birth}}"></td>
+                </tr>
+                <tr>
+                    <th>Mail</th>
+                    <td><input type="text" name="mail" value="{{ i.mail}}"></td>
+                </tr>
+                <tr>
+                    <th>Mobile Number</th>
+                    <td><input type="text" name="mobile" value="{{ i.mobile}}"></td>
+                </tr>
+
+                <tr>
+                    <th>Address</th>
+                    <td><input type="text" name="address" value="{{ i.address}}"></td>
+                </tr>
+
+                <tr>
+                    <th>Register Number</th>
+                    <td><input type="text" name="your_register_no_is" value="{{ i.your_register_no_is}}"></td>
+                </tr>
+
+                <tr>
+                    <th>Product Image</th>
+                    <td><input type="file"  name="profile" value="{{ i.profile}}"></td>
+                </tr>
+                <tr>
+                    <td><input type="reset" style="color:blue" value="Reset"></td>
+                    <td><input type="submit" style="color:rgb(16, 211, 26)" value="Submit"></td>Reset"></td>
+                </tr>
+            </table>
+            {% endfor %}
+
+    </center>
+
+
+    {% endblock %}
+
+

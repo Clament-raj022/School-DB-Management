@@ -1,0 +1,77 @@
+
+{% extends  'student/home.html' %}
+{% load static %}
+<title>x{% block title %} View student {% endblock %}</title>
+
+    
+    {% block content %}
+   
+        
+            
+        <section class="view-sec">
+            <center>
+    <h1>{{ request.session.name }}</h1>
+    
+    <table>
+        
+        {% for i in data %}
+        
+        <tr>  
+            <th>Student ID      &nbsp; &nbsp;     :</th>  
+            <td>{{i.id}}</td>                          
+        </tr>
+        <tr>  
+            <th>Student Name        &nbsp; &nbsp;    :</th> 
+             <td>{{i.name}}</td>         
+        </tr>
+        <tr> 
+            <th>Student Register No     &nbsp; &nbsp;     :</th>
+            <td> {{i.your_register_no_is}} </td>          
+        </tr>
+        <tr>
+            <th>Student Class    &nbsp; &nbsp;    :</th>
+             <td>{{i.Class}}</td>        
+        </tr>
+        <tr>    
+            <th>Mail          &nbsp; &nbsp;   :</th>
+            <td>{{i.mail}}</td>         
+        </tr>
+        <tr>  
+            <th>Date of Birth       &nbsp; &nbsp;     :</th> 
+            <td>{{i.date_of_birth}}</td>     
+        </tr>
+        <tr>   
+            <th>Mobile      &nbsp; &nbsp;     :</th>
+            <td>{{i.mobile}}</td>       
+        </tr>
+        <tr>    
+            <th>Address      &nbsp; &nbsp;    :</th>
+            <td>{{i.address}}</td>    
+        </tr>
+        <tr>  
+            <th>Student Image              :</th> 
+            <td> <img src="{% get_media_prefix %{{ i.profile }}}" style="height:50px;width: 50px; border-radius: 50%;border:1px solid black" > </td>         
+        </tr>
+        <tr>   
+            <th>Student Registered Date         :</th>
+            <td>{{i.date}}</td>         
+        </tr>
+            
+            
+            
+       
+            <!-- <td><img src="/teacher/static/prof_imgs/{{i.Image}}" style="height: 100px;
+                 width:100px; border:1px solid black;border-radius: 50%; padding:15px"></td> -->
+            
+            
+            <!-- <td><a href="" style="color:blue;">Edit</a></td> -->
+            <!-- <td><a href="" style="color:red;" onclick="return confirm('Are you sure you want to delete?')">Delete</a></td> -->
+            {% endfor %}
+            
+        </tr>
+        </table>
+    </center>
+    </section>
+
+
+{% endblock %}

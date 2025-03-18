@@ -1,0 +1,24 @@
+
+    #view{
+        background-color: #6d96d4;
+            width: 100%;
+            height: 400px;
+            padding: 10px;
+            text-align: center ;
+            vertical-align: middle;
+            justify-content: center;
+            font-size: 44px;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        }
+    
+
+
+#tb{
+    margin-top:-15px;
+}
+#vi{
+    margin-top:-25px;
+}
+#home{
+    margin-right: 250px;
+}   

@@ -1,0 +1,16 @@
+{% load static %}
+<style>#home{
+    margin-right: 100px;
+}   
+</style>
+
+
+<nav style="size: 500px;">
+    <a href="{% url 'stu_home' %}" id="home"> Home</a>&nbsp; &nbsp;  &nbsp; 
+    <a href="{% url 'stu_view' %}">Profile</a>&nbsp; &nbsp;  &nbsp; 
+    <a href="{% url 'login' %}">Logout</a>&nbsp; &nbsp;  &nbsp; 
+    <a href="{% url 'stu_view_marks' %}">View my Mark</a>&nbsp; &nbsp;  &nbsp; 
+</nav>
+
+
+

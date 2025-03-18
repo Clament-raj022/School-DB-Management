@@ -1,0 +1,50 @@
+{% extends 'home.html' %}
+{% load static %}
+
+
+{% block title %}  Student Details{% endblock %}
+
+    {% block content %}
+ 
+    <table id="tb">
+        
+            <tr>
+                <th>Student ID</th>
+                <th>Student Name</th>
+                <th>Student Register No</th>
+                <th>Student Class</th>
+                <th>Date of Birth</th>
+                <th>Mail</th>
+                <th>Mobile</th>
+                <th>Address</th>
+                <th>Student Image</th>
+                <th>Student Registered Date</th>
+                <th>Edit</th> 
+                <th>Delete</th> 
+            </tr>
+        
+        {% for i in data %}
+       
+            <!-- Add table rows with data from models here -->
+            <tr>
+                <td>{{i.id}}</td>
+            <td>{{i.name}}</td>
+            <td> {{i.your_register_no_is}} </td>
+            <td>{{i.Class}}</td>
+            <td>{{i.date_of_birth}}</td>
+            <td>{{i.mail}}</td>
+            <td>{{i.mobile}}</td>
+            <td>{{i.address}}</td>
+            <td> <img src="{% get_media_prefix %{{ i.profile }}}" style="height:50px;width: 50px; border-radius: 50%;border:1px solid black" > </td>
+            <td>{{i.date}}</td>          
+            <td>    </td>
+            <td><a href="{% url 'del_cust' %}?q={{i.id}}"><button class="btn-del">Delete</button></a></td>
+                
+            </tr>
+        
+        {% endfor %}
+
+        
+    </table>
+
+{% endblock %}
